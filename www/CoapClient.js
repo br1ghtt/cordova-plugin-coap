@@ -13,4 +13,4 @@ CoapClient.prototype.test = function (successCallback, errorCallback) {
     exec(successCallback, errorCallback, "Coap", "test");
 };
 
-modules.export = new CoapClient();
+module.exports = new CoapClient();
