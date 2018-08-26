@@ -12,4 +12,5 @@ android {
 dependencies {
     compile 'org.eclipse.californium:californium-core:1.0.4'
     compile 'org.eclipse.californium:element-connector:1.0.4'
+    compile 'com.google.code.gson:gson:2.8.2'
 }

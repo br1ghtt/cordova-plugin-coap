@@ -1,6 +1,6 @@
-#Cordova Plugin CoAP 
+#Cordova Andorid Plugin CoAP 
 
-(ps: Just Start it, and can done my job. If you would like to use it, please let me know it.)
+A Cordova plugin for Android.
 
 Native Libs
 ---
