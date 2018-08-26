@@ -9,9 +9,9 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/coap.js" target="js/coap.js"/>
+  <asset src="www/CoapClient.js" target="js/CoapClient.js"/>
 
-  <js-module src="www/coap.js" name="coap">
+  <js-module src="www/CoapClient.js" name="coap">
     <clobbers target="coap" />
   </js-module>
 
