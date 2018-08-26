@@ -3,7 +3,7 @@
         id="cordova-plugin-coap"
         version="0.0.1">
 
-  <name>Coap</name>
+  <name>CoapClient</name>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
@@ -11,8 +11,8 @@
 
   <asset src="www/CoapClient.js" target="js/CoapClient.js"/>
 
-  <js-module src="www/CoapClient.js" name="coap">
-    <clobbers target="coap" />
+  <js-module src="www/CoapClient.js" name="CoapClient">
+    <clobbers target="CoapClient" />
   </js-module>
 
   <platform name="android">
