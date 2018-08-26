@@ -48,14 +48,16 @@ public class Coap extends CordovaPlugin {
                 callbackContext.error("Exception");
                 return false;
             }
-        } else if (action.equals("test")) {
-            Log.d("Coap ", "\n test for get");
+        } else if (action.equals("ping")) {
+            Log.d("Coap ", "\n test for ping");
 
             try {
-                URI uri = new URI("coap://iot.eclipse.org/test");
+                URI uri = new URI(data.getString(0));
                 CoapClient mCoapClient = new CoapClient(uri);
-                CoapResponse response = mCoapClient.get();
-                callbackContext.success(response.getResponseText());
+                boolean ping = mCoapClient.ping(10000);
+                callbackContext.success(
+                        (new Boolean(ping)).toString()
+                        );
                 return true;
             } catch (URISyntaxException e) {
                 Log.e("Coap", "URISyntaxException");

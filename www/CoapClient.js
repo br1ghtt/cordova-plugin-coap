@@ -3,14 +3,14 @@ var exec = require('cordova/exec');
 function CoapClient() {
 
 }
-CoapClient.prototype.get = function(name, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "Coap", "get", [name]);
+CoapClient.prototype.get = function(url, successCallback, errorCallback) {
+    exec(successCallback, errorCallback, "Coap", "get", [url]);
 };
-CoapClient.prototype.post = function(name, options, successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "Coap", "post", [name, options]);
+CoapClient.prototype.post = function(url, options, successCallback, errorCallback) {
+    exec(successCallback, errorCallback, "Coap", "post", [url, options]);
 };
-CoapClient.prototype.test = function (successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "Coap", "test");
+CoapClient.prototype.ping = function (url, successCallback, errorCallback) {
+    exec(successCallback, errorCallback, "Coap", "ping", [url]);
 };
 
 module.exports = new CoapClient();
