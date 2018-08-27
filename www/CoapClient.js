@@ -7,6 +7,18 @@ CoapClient.prototype.get = function (options, successCallback, errorCallback) {
     console.log(JSON.stringify(options));
     exec(successCallback, errorCallback, "Coap", "get", [options]);
 };
+CoapClient.prototype.post = function (options, successCallback, errorCallback) {
+    console.log(JSON.stringify(options));
+    exec(successCallback, errorCallback, "Coap", "post", [options]);
+};
+CoapClient.prototype.put = function (options, successCallback, errorCallback) {
+    console.log(JSON.stringify(options));
+    exec(successCallback, errorCallback, "Coap", "put", [options]);
+};
+CoapClient.prototype.delete = function (options, successCallback, errorCallback) {
+    console.log(JSON.stringify(options));
+    exec(successCallback, errorCallback, "Coap", "delete", [options]);
+};
 CoapClient.prototype.discover = function (options, successCallback, errorCallback) {
     console.log(JSON.stringify(options));
     exec(successCallback, errorCallback, "Coap", "discover", [options]);
