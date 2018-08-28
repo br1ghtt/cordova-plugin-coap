@@ -41,7 +41,6 @@ public class Coap extends CordovaPlugin {
         } else if (action.equals("discover")) {
             return discover(options, callbackContext);
         } else {
-
             return false;
         }
     }
@@ -122,7 +121,11 @@ public class Coap extends CordovaPlugin {
                 .query(options.getQuery())
                 .create();
         coapClient.setTimeout(options.getTimeout());
-        if (options.isUseCons()) coapClient.useCONs();
+        if (options.isUseCons()) {
+            coapClient.useCONs();
+        } else {
+            coapClient.useNONs();
+        }
         return coapClient;
     }
 
