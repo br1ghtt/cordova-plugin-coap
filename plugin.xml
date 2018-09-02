@@ -33,6 +33,9 @@
     <source-file src="src/android/Coap.java" target-dir="src/com/phodal/plugin/"/>
     <source-file src="src/android/CordovaCoapClient.java" target-dir="src/com/phodal/plugin/"/>
     <source-file src="src/android/RequestOptions.java" target-dir="src/com/phodal/plugin/"/>
+    <source-file src="src/android/ResponseResult.java" target-dir="src/com/phodal/plugin/"/>
+    <source-file src="src/android/MediaTypeResult.java" target-dir="src/com/phodal/plugin/"/>
+    <source-file src="src/android/DataTypeConverter.java" target-dir="src/com/phodal/plugin/"/>
   </platform>
 
   <platform name="ios">

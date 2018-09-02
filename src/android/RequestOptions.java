@@ -1,6 +1,5 @@
 package com.phodal.plugin;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,6 +29,20 @@ public class RequestOptions {
         this.query = "";
         this.useCons = false;
         this.timeout = TIMEOUT;
+    }
+
+    public static RequestOptions jsonObjectToRequestOptions(JSONObject obj) throws JSONException {
+        RequestOptions options = new RequestOptions(
+                obj.getString("protocol"),
+                obj.getString("host"),
+                obj.getInt("port")
+        );
+        options.setPath(obj.optString("path", ""));
+        options.setPayload(obj.optString("payload", ""));
+        options.setQuery(obj.optString("query", ""));
+        options.setAccept(obj.optString("accept", ""));
+        options.setUseCons(obj.optBoolean("useCons", false));
+        return options;
     }
 
     public String getProtocol() {
@@ -102,19 +115,5 @@ public class RequestOptions {
 
     public void setTimeout(int timeout) {
         this.timeout = timeout;
-    }
-
-    public static RequestOptions jsonObjectToRequestOptions(JSONObject obj) throws JSONException {
-        RequestOptions options = new RequestOptions(
-                obj.getString("protocol"),
-                obj.getString("host"),
-                obj.getInt("port")
-        );
-        options.setPath(obj.optString("path", ""));
-        options.setPayload(obj.optString("payload", ""));
-        options.setQuery(obj.optString("query", ""));
-        options.setAccept(obj.optString("accept", ""));
-        options.setUseCons(obj.optBoolean("useCons", false));
-        return options;
     }
 }

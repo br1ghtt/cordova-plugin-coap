@@ -14,6 +14,12 @@ public class Coap extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
+        if (action.equals("mediatypes")) {
+            Log.d(TAG, "MEDIATYPES");
+            callbackContext.success(MediaTypeResult.getAllMediaTypes());
+            return true;
+        }
+
         CordovaCoapClient coapClient = new CordovaCoapClient(callbackContext);
         Log.d(TAG, data.toString());
         RequestOptions options;
@@ -39,7 +45,7 @@ public class Coap extends CordovaPlugin {
             Log.d(TAG, "PING");
             return coapClient.ping(options);
         } else if (action.equals("discover")) {
-            Log.d(TAG, "DISCOVEr");
+            Log.d(TAG, "DISCOVER");
             return coapClient.discover(options);
         } else {
             Log.d(TAG, "Unknown");

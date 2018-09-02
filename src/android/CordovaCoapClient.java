@@ -1,5 +1,5 @@
 package com.phodal.plugin;
-import org.apache.cordova.*;
+
 import com.google.gson.Gson;
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapHandler;
@@ -8,6 +8,8 @@ import org.eclipse.californium.core.WebLink;
 import org.eclipse.californium.core.coap.MediaTypeRegistry;
 
 import java.util.Set;
+
+import org.apache.cordova.*;
 
 public class CordovaCoapClient {
 
@@ -20,6 +22,7 @@ public class CordovaCoapClient {
     public boolean ping(RequestOptions options) {
         CoapClient coapClient = buildClient(options);
         boolean ping = coapClient.ping(options.getTimeout());
+        callbackContext.success(new Boolean(ping).toString());
         return true;
     }
 
@@ -27,7 +30,7 @@ public class CordovaCoapClient {
         Gson gson = new Gson();
         CoapClient coapClient = buildClient(options);
         Set<WebLink> weblinks = coapClient.discover();
-        System.out.println(gson.toJson(weblinks));
+        callbackContext.success(gson.toJson(weblinks));
         return true;
     }
 
@@ -64,16 +67,15 @@ public class CordovaCoapClient {
     }
 
     private CoapHandler getCoapHandler() {
-        Gson gson = new Gson();
         return new CoapHandler() {
             @Override
             public void onLoad(CoapResponse response) {
-                callbackContext.success(gson.toJson(response));
+                callbackContext.success(ResponseResult.coapResponseResult(response));
             }
 
             @Override
             public void onError() {
-                callbackContext.error("error in request");
+                callbackContext.error("Coap Request Error!");
             }
         };
     }
