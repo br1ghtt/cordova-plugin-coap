@@ -31,6 +31,8 @@
     <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
 
     <source-file src="src/android/Coap.java" target-dir="src/com/phodal/plugin/"/>
+    <source-file src="src/android/CordovaCoapClient.java" target-dir="src/com/phodal/plugin/"/>
+    <source-file src="src/android/RequestOptions.java" target-dir="src/com/phodal/plugin/"/>
   </platform>
 
   <platform name="ios">
