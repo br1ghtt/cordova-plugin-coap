@@ -9,7 +9,7 @@ import java.util.Set;
 public class MediaTypeResult {
 
     public static JSONArray getAllMediaTypes() {
-        JSONArray mediaTypeArray = new JSONArray("[]");
+        JSONArray mediaTypeArray = new JSONArray();
         Set<Integer> mediaTypes = MediaTypeRegistry.getAllMediaTypes();
         for (Integer mediaType : mediaTypes) {
             JSONObject mediaTypeObj = new JSONObject();

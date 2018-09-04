@@ -30,7 +30,7 @@ public class CordovaCoapClient {
         Gson gson = new Gson();
         CoapClient coapClient = buildClient(options);
         Set<WebLink> weblinks = coapClient.discover();
-        callbackContext.success(gson.toJson(weblinks));
+        callbackContext.success(ResourceResult.coapResourceResult(weblinks));
         return true;
     }
 

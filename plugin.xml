@@ -36,6 +36,7 @@
     <source-file src="src/android/ResponseResult.java" target-dir="src/com/phodal/plugin/"/>
     <source-file src="src/android/MediaTypeResult.java" target-dir="src/com/phodal/plugin/"/>
     <source-file src="src/android/DataTypeConverter.java" target-dir="src/com/phodal/plugin/"/>
+    <source-file src="src/android/ResourceResult.java" target-dir="src/com/phodal/plugin/"/>
   </platform>
 
   <platform name="ios">

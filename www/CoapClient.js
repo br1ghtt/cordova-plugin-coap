@@ -7,10 +7,6 @@ CoapClient.prototype.get = function (options, successCallback, errorCallback) {
     console.log(JSON.stringify(options));
     exec(successCallback, errorCallback, "Coap", "get", [options]);
 };
-CoapClient.prototype.get2 = function (options, successCallback, errorCallback) {
-    console.log(JSON.stringify(options));
-    exec(successCallback, errorCallback, "Coap", "get-2", [options]);
-};
 CoapClient.prototype.post = function (options, successCallback, errorCallback) {
     console.log(JSON.stringify(options));
     exec(successCallback, errorCallback, "Coap", "post", [options]);
